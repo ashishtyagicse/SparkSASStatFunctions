@@ -19,27 +19,27 @@ This utility aims at filling that gap using sparks processing power.
     This module calculates the count as frequency and percentage for each group of values in a string based column in given dataset.
     
     Module has two main functions 
-    - getAllStats: This function takes a data frame as input and if schema is not presnet in dataframe then it inferrs it automatically if column is string type or not. 
+    - getAllStats: This function takes a data frame as input and if schema is not present in dataframe then it infers it automatically if column is string type or not. 
     It internally calls the getColumnStats function with a list of columns for which stats need to be computed.
-    Optionally you can also provide a list of column in which case only those columns will be processed.
-    - getColumnStats: This function calls subfunctions to calculate frequency and percentage and then combine and reformats the data to match rest of the application.
+    Optionally you can also provide a list of columns in which case only those columns will be processed.
+    - getColumnStats: This function calls sub functions to calculate frequency and percentage and then combine and reformats the data to match rest of the application.
   - Mean Module:
    
     This module calculates count, mean, standard deviation, min value and max value for ant numeric column in the dataset provided.
       
     Same as Freq module this module has two main functions 
-    - getAllStats: This function takes a data frame as input and if schema is not presnet in dataframe then it inferrs it automatically if column is numeric type or not. 
+    - getAllStats: This function takes a data frame as input and if schema is not present in dataframe then it infers it automatically if column is numeric type or not. 
     It internally calls the getColumnStats function with a list of columns for which stats need to be computed.
-    Optionally you can also provide a list of column in which case only those columns will be processed.
-    - getColumnStats: This function calls subfunctions to calculate mean related stats and then combine and reformats the data to match rest of the application.
+    Optionally you can also provide a list of columns in which case only those columns will be processed.
+    - getColumnStats: This function calls sub functions to calculate mean related stats and then combine and reformats the data to match rest of the application.
   - AllStats:
   
-    This module is a wrpper module which internally calls Freq and Mean module functions and combine their outputs in one dataframe for consistency.
+    This module is a wrapper module which internally calls Freq and Mean module functions and combine their outputs in one dataframe for consistency.
     
   - Schema:
   
     This module checks each value in a column to determine if a column is string type or numeric type or decimal type.
-    Inferring schema from data in this manner can slow down processing so it is advisable to use parquet files which already contains the schema informations.
+    Inferring schema from data in this manner can slow down processing so it is advisable to use parquet files which already contains the schema information.
     
 - SparakStats:
   
@@ -49,11 +49,11 @@ This utility aims at filling that gap using sparks processing power.
   
 - TestModules:
   
-  To test the functionality and see output formats utily includes a test module which can be run by submitting 
+  To test the functionality and see output formats utility includes a test module which can be run by submitting 
   
   `spark-submit SparkStats.py -test`
   
-  This test utility uses files in TestData folder so make sure all of those files are available while running the utiliy in test mode.
+  This test utility uses files in TestData folder so make sure all those files are available while running the utility in test mode.
   
   
 ### Run Commands:
@@ -78,4 +78,3 @@ This utility aims at filling that gap using sparks processing power.
   - Compute all mean stats on parquet file but only process two columns provided in a file
   
     ```spark-submit SparkStats.py -mean -column:file "columns.txt" -dataset:parquet example.parquet -save:parquet output.parquet```
-   
