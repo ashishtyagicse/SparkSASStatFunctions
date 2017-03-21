@@ -53,7 +53,7 @@ This utility aims at filling that gap using sparks processing power.
   
   `spark-submit SparkStats.py -test`
   
-  This test utility uses files in TestData folder so make sure all those files are available while running the utility in test mode.
+  This test utility uses files in TestData folder so make sure all those files are available in HDFS and path has been changed in TestDataProvider files while running the utility in test mode.
   
   
 ### Run Commands:
